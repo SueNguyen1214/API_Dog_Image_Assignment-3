@@ -10,12 +10,13 @@ function retrieveImage(chosenBreed){
 function displayImages(responseJson){
   let chosenBreed=$(`input[type="text"]`).val();
   console.log(responseJson);
-  $('.results-img').html('');
+  $('.results').html('');
   if (responseJson.status==="success"){
-    $('.results-img').append(
-      `<img src="${responseJson.message}" class="results-img"><br>`)    
+    $('.results').append(
+      `<h2>Here is your image</h2>
+      <img src="${responseJson.message}" class="results-img"><br>`)    
     } else{
-      $('.results').html(
+      $('.results').append(
       `<h2>${chosenBreed} breed is not available</h2>`) 
     }
     $('.results').removeClass('hidden');
